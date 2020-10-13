@@ -1,0 +1,34 @@
+{
+  "envId": "{{env.ENV_ID}}",
+  "version": "2.0",
+  "$schema": "https://framework-1258016615.tcloudbaseapp.com/schema/latest.json",
+  "functionRoot": "./cloudfunctions",
+  "functions": [],
+  "framework": {
+    "name": "sec",
+    "plugins": {
+      "function": {
+        "use": "@cloudbase/framework-plugin-function",
+        "inputs": {
+          "functionRootPath": "./cloudfunctions",
+          "functions": [{
+              "name": "imagesec",
+              "installDependency":true
+            },
+            {
+              "name": "textsec",
+              "installDependency":true
+            }
+          ]
+        }
+      },
+      "mp": {
+        "use": "@cloudbase/framework-plugin-mp",
+        "inputs": {
+          "appid": "{{env.WX_APPID}}",
+          "privateKeyPath": "{{env.WX_CI_KEY_PATH}}"
+        }
+      }
+    }
+  }
+}
