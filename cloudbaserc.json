@@ -26,7 +26,20 @@
         "use": "@cloudbase/framework-plugin-mp",
         "inputs": {
           "appid": "{{env.WX_APPID}}",
-          "privateKeyPath": "{{env.WX_CI_KEY_PATH}}"
+          "privateKeyPath": "{{env.WX_CI_KEY_PATH}}",
+          "localPath": "./",
+          "ignores": ["node_modules/**/*"],
+          "deployMode": "preview",
+          "previewOptions": {
+            "desc": "一键预览",
+            "setting": {
+              "es6": false
+            },
+            "qrcodeOutputPath": "./qrcode.jpg",
+            "pagePath": "pages/index/index",
+            "searchQuery": "",
+            "scene": 1011
+          }
         }
       }
     }
