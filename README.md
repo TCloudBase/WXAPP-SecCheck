@@ -9,6 +9,15 @@
 - 初始化云开发环境，如果有多个云开发环境造成wx.cloud.init错误，则在app.js处进行环境定义。
 - 将cloudfunctions文件夹内的2个云函数创建并部署
 
+使用Cloudbase FrameWork部署时，在项目根目录创建.env文件，内容按照下属格式填写：
+``` bash
+ENV_ID=替换你的云开发环境ID
+WX_APPID=替换你的微信小程序appid
+WX_CI_KEY_PATH=小程序上传密钥文件路径
+```
+
+小程序上传密钥请根据[微信文档](https://developers.weixin.qq.com/miniprogram/dev/devtools/ci.html)获取，另外需要注意关闭或设置IP白名单。
+
 ## 参考文档
 
 - [云开发文档](https://developers.weixin.qq.com/miniprogram/dev/wxcloud/basis/getting-started.html)
